@@ -1,0 +1,31 @@
+---
+title: "Process update: HUD foundation progression (v0.1.0 to v0.1.6)"
+date: "2026-02-05"
+tags: ["Process", "Foundation", "Architecture"]
+summary: "Summarizes the foundational progression from initial release through HUD host, recording access, stacking, notes, and layout persistence."
+---
+## Baseline sequence
+From **v0.1.0 (2026-01-27)** to **v0.1.6 (2026-02-05)**, the project established the core HUD operating model used by later releases.
+
+## v0.1.0 first visual capture
+This screenshot marks the first time Walker Brain was viewed in the target mixed-reality usage path: **XREAL One glasses driven from Samsung DeX desktop mode**. It was an early but critical validation moment because the HUD, transparency approach, and composited desktop behavior could be seen together in a real wearable context instead of only emulator or phone-only views.
+
+![Walker Brain first visual in XREAL One via Samsung DeX](/images/process/first-visual-xreal-dex.jpg)
+
+At this stage the UI was intentionally minimal, but this capture confirmed the project direction: a practical HUD surface that can sit on top of real workflow tools while remaining readable and lightweight.
+
+## Key milestones
+- **v0.1.0–0.1.1:** initial release, manual versioning, transparent/black backdrop, app icon/start menu branding.
+- **v0.1.2:** standardized Voice Recording HUD controls and added desktop/orientation-independent HUD sizing/location/zoom plus live log stream HUD.
+- **v0.1.3:** standardized HUD pattern, updated Settings HUD, and shifted to continuous listen-and-record flow.
+- **v0.1.4:** introduced single HudScreen host/backdrop model, transparent HUD layering, and access to recorded audio/transcripts.
+- **v0.1.5:** added HUD stacking (tap brings to front) and scrolling in Audio Files HUD.
+- **v0.1.6:** delivered Notes HUD + per-note widgets, persisted note/widget layout, header auto-hide, and multiple HUD movement/resize fixes.
+
+## Feedback on v0.1.6 voice UX
+During early usage with Android native ASR, the start/end beeps around voice recording/transcription were immediately disruptive and felt noisy in real workflows.
+
+This was flagged as something that needs to be changed from the start, with a new voice pipeline approach to be evaluated.
+
+## Why this matters
+This progression created the stable interaction substrate that later voice/VAD and recognition improvements depend on.
