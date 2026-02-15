@@ -1,16 +1,29 @@
-# React + Vite
+# Walker XR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Walker XR is a progress journal for the Walker Brain project, focused on voice-first mixed reality workflows for XREAL-connected Android usage.
 
-Currently, two official plugins are available:
+This repository exists to share project evolution clearly through GitHub Pages, with emphasis on what is being built, why it matters, and how the system is improving over time.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Github Pages: https://thiagofonsecabarros.github.io/walker-xr/
 
-## React Compiler
+## What this project page contains
+- **The Plan**: structured capability roadmap for the product direction.
+- **The Process**: versioned progress notes based on real implementation milestones.
+- **Architecture**: local-first system overview and design principles.
+- **Contact**: ways to reach out for collaboration or feedback.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Current focus
+- Improving voice interaction quality and reliability in real environments.
+- Reducing battery impact from continuous speech processing.
+- Strengthening OCR and object-recognition behavior for daily practical use.
+- Expanding memory, automation, and agent orchestration capabilities.
 
-## Expanding the ESLint configuration
+## Progress highlights
+- Established a stable HUD foundation and interaction model.
+- Migrated speech pipeline toward Whisper-based continuous recognition.
+- Added VAD controls and telemetry to reduce unnecessary decode workload.
+- Continued iterative testing with device-level feedback (battery, noise robustness, transcript quality).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Contact
+- LinkedIn: https://www.linkedin.com/in/thiagofbarros/
+- Email: thiagofbarros@gmail.com
