@@ -329,18 +329,88 @@ function PlanPage() {
   )
 }
 
+const markerDefinitions = [
+  {
+    key: 'added',
+    label: 'New features',
+    icon: '●',
+    className: 'marker-added',
+    matches: (content) => /^##\s+Added\b/m.test(content),
+  },
+  {
+    key: 'fixed',
+    label: 'Bug fixes',
+    icon: '●',
+    className: 'marker-fixed',
+    matches: (content) => /^##\s+Fixed\b/m.test(content),
+  },
+  {
+    key: 'changed',
+    label: 'Changes',
+    icon: '●',
+    className: 'marker-changed',
+    matches: (content) => /^##\s+Changed\b/m.test(content),
+  },
+  {
+    key: 'feedback',
+    label: 'Feedback',
+    icon: '●',
+    className: 'marker-feedback',
+    matches: (content) => /^##\s+Feedback\b/m.test(content),
+  },
+]
+
+function getProcessMarkers(post) {
+  const content = `${post.summary}\n${post.body}`
+  const markers = markerDefinitions.filter((marker) => marker.matches(content))
+
+  if (markers.length > 0) return markers
+
+  return [
+    {
+      key: 'milestone',
+      label: 'Milestone',
+      icon: '●',
+      className: 'marker-milestone',
+    },
+  ]
+}
+
+function getVersionFromTitle(title) {
+  const version = title.match(/v\d+\.\d+\.\d+/i)
+  return version ? version[0].toUpperCase() : 'Version update'
+}
+
 function ProcessListPage() {
   const posts = getAllDevlogs()
 
   return (
     <section>
       <h1>The Process</h1>
-      <p className="lead">Structured implementation notes based on the Walker Brain README and delivery milestones.</p>
-      <div className="list-grid">
+      <p className="lead">Structured implementation notes based on the Walker Brain CHANGELOG and delivery milestones.</p>
+      <div className="process-legend card">
+        {markerDefinitions.map((marker) => (
+          <span key={marker.key} className={`process-marker ${marker.className}`}>
+            <span aria-hidden="true">{marker.icon}</span> {marker.label}
+          </span>
+        ))}
+      </div>
+      <div className="process-timeline">
         {posts.map((post) => (
-          <article key={post.slug} className="card">
-            <p className="muted">{post.date}</p>
+          <article key={post.slug} className="card timeline-item">
+            <span className="timeline-dot" aria-hidden="true" />
+            <div className="timeline-head">
+              <p className="muted">{post.date}</p>
+              <span className="version-badge">{getVersionFromTitle(post.title)}</span>
+            </div>
             <h2>{post.title}</h2>
+            <div className="process-markers">
+              {getProcessMarkers(post).map((marker) => (
+                <span key={`${post.slug}-${marker.key}`} className={`process-marker ${marker.className}`}>
+                  <span aria-hidden="true">{marker.icon}</span> {marker.label}
+                </span>
+              ))}
+            </div>
             <div className="tag-row">
               {post.tags.map((tag) => (
                 <Tag key={`${post.slug}-${tag}`}>{tag}</Tag>

@@ -329,3 +329,124 @@ pre {
   border: 1px solid #24354f;
   margin: 0.8rem 0;
 }
+
+.process-legend {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.process-timeline {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.68rem;
+  top: 0.15rem;
+  bottom: 0.15rem;
+  width: 2px;
+  background: linear-gradient(180deg, #33558a, #283e60);
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.63rem;
+  top: 1.1rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #64a2ff;
+  border: 2px solid #0d1118;
+  box-shadow: 0 0 0 3px #213753;
+}
+
+.timeline-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.version-badge {
+  border: 1px solid #3a5172;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.78rem;
+  color: #cae0ff;
+  background: #122035;
+  white-space: nowrap;
+}
+
+.process-markers {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin: 0.4rem 0 0.8rem;
+}
+
+.process-marker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid #334963;
+  border-radius: 999px;
+  padding: 0.22rem 0.58rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.marker-added {
+  border-color: #2f7f8f;
+  color: #9de8f4;
+  background: #102730;
+}
+
+.marker-fixed {
+  border-color: #327f52;
+  color: #a8efc2;
+  background: #10281a;
+}
+
+.marker-changed {
+  border-color: #8b7a32;
+  color: #f1e2a9;
+  background: #2b2411;
+}
+
+.marker-feedback {
+  border-color: #7d3e93;
+  color: #e8b6fa;
+  background: #26142d;
+}
+
+.marker-milestone {
+  border-color: #44679b;
+  color: #b9d6ff;
+  background: #14233a;
+}
+
+@media (max-width: 640px) {
+  .process-timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline-dot {
+    left: -1.12rem;
+  }
+
+  .timeline-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
