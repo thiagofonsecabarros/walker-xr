@@ -37,8 +37,10 @@ Version **0.1.10 (2026-02-16)** completes the first full migration step to the M
 - Removed legacy `jniLibs` duplicates to eliminate `libonnxruntime.so` merge conflicts.
 
 ## Feedback
-This release is a strong architectural move for local-first speech, but practical testing should keep close watch on two fronts:
-- **Accuracy and robustness** in noisy environments (still a key quality gate).
-- **Compatibility risk** for devices below API 35 despite override-based install support.
+Battery behavior looked better in this round: after about **4 hours** of use, battery dropped roughly **50%**, which is currently acceptable.
 
-Next step is focused field testing to validate whether Moonshine improves real-world stability and battery trade-offs versus the previous Whisper path.
+Speech recognition quality is still not accurate enough in practical usage. A likely cause is environmental noise plus microphone placement when the phone stays in the pocket, where captured voice is less clear.
+
+A possible mitigation is testing with an earbud microphone that captures external speech more cleanly. This may also improve when running through XREAL One usage patterns, which still needs direct validation.
+
+Next step: investigate and fix potential race/overlapped speech-recognition behavior (to be confirmed in deeper testing).
