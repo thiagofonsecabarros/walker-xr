@@ -27,3 +27,11 @@ Version **0.1.11 (2026-02-17)** focused on making continuous speech processing m
 - Fixed early/late content loss in long segments by committing only completed Moonshine lines and keeping in-progress revisions as partials.
 - Updated HUD battery indicator to read live battery percentage from Android `ACTION_BATTERY_CHANGED`.
 - Improved top-right battery HUD visuals with percentage, charging indicator (`⚡` + charging battery icon), and color-coded states (charging teal, low red, medium yellow).
+  
+## Feedback
+Battery consumption dropped drastically in this cycle: testing showed over **11 hours** of use with only about **40%** battery consumed. This is a major step forward.
+
+Speech recognition quality is still not where it needs to be. There may still be a race condition affecting transcript stability.
+
+Next validation step: test a **push-to-talk + SR** path and compare outcomes to determine whether this is primarily a speech-model limitation or an implementation issue.
+
