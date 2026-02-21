@@ -1,0 +1,27 @@
+---
+title: "Process update: calendar editing and VAD single-pass transcription (v0.1.13)"
+date: "2026-02-19"
+tags: ["Process", "Calendar", "Voice", "Stability"]
+summary: "Expanded calendar edit/delete and recurrence controls, while shifting continuous speech processing to VAD-triggered single-pass decoding for better recognition stability."
+---
+## Release focus
+Version **0.1.13 (2026-02-19)** advanced Calendar manageability and tightened continuous speech behavior around utterance boundaries.
+
+## Added
+- Calendar event edit/delete actions (currently scoped to manageable app-owned/selected writable events), with prefilled edit form matching create-event UX.
+- Recurring-event scope prompt for Calendar edit/delete with actionable options:
+  - `This event`
+  - `This and following`
+  - `All events in series`
+- Event color selection in Calendar create/edit dialogs (chip + picker), with selected color persisted as event border color for manageable app/writable events.
+
+## Changed
+- Continuous transcription moved to VAD-triggered single-pass decode: audio accumulates during active speech and is transcribed once at VAD stop (utterance end), replacing periodic streamed decode intervals.
+- Continuous session behavior now aligns more closely with push-to-talk-style utterance handling via VAD boundaries, reducing mid-utterance churn and improving practical recognition stability.
+- Voice-note command handling now supports multiple note intents in a single transcript segment.
+- Calendar HUD agenda rows now render as full-width cards with inline event actions.
+
+## Fixed
+- Fixed false "silent segment progress" logs during active speech by wiring VAD activity signals into `VoiceSessionManager` monitor gating.
+- Fixed missing transcript persistence at utterance end by finalizing/rolling segment processing immediately after VAD-stop final handling in continuous mode.
+- Fixed Calendar edit recurrence round-trip by parsing `RRULE` from provider records and pre-populating recurrence selection in the edit dialog.

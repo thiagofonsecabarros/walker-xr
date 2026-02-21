@@ -23,3 +23,10 @@ Version **0.1.12 (2026-02-18)** adds calendar-native workflows and tightens HUD 
   - Opening without saved layout seeds mode-specific defaults.
 - HUD drag bounds now allow windows to move up to 50% off-screen in any direction (including minimized bubbles) while still preventing fully lost panes.
 - Apps menu behavior now includes a dedicated Calendar entry that opens the Calendar HUD instead of navigating to a stub screen.
+
+## Feedback
+Calendar was a great addition in this release, and it was improved even further in **v0.1.13**.
+
+Voice calendar commands were tested and are working, and the Google Calendar sync import is also working as expected.
+
+![Calendar HUD v0.1.12 screenshot](/images/process/Screenshot_20260218_v0-1-12.jpg)

@@ -1,0 +1,28 @@
+---
+title: "Process update: Notifications HUD and phone mirroring (v0.1.14)"
+date: "2026-02-20"
+tags: ["Process", "Notifications", "HUD", "Android"]
+summary: "Introduced a dedicated Notifications HUD with live phone notification mirroring, action handling, and inline reply support."
+---
+## Release focus
+Version **0.1.14 (2026-02-20)** extends the Apps surface with a dedicated Notifications HUD and live notification interaction capabilities.
+
+## Added
+- Notifications HUD (`Apps -> Notifications`) with live phone notification mirroring via `NotificationListenerService`.
+- In-app notification interactions including expand/collapse, action buttons, and inline reply support for `RemoteInput` actions.
+- Notification access flow/state handling in HUD and ViewModel, including quick-open navigation to Android Notification Access settings.
+
+## Changed
+- HUD system now includes a dedicated Notifications window with standard controls (move/minimize/resize/pin/close).
+- Notifications panel styling updated with custom black-themed panel/borders for notification-shade visual parity.
+
+## Feedback
+I tested this version with updated firmware on my XREAL One glasses, and it was amazing to see it in XREAL 3D. It produced exactly the effect I expected: seeing through the scene with HUDs around me, while the black background behaves like a transparent background.
+
+This raised an important product question about how far to go with the XREAL SDK path, since that may also require a phone upgrade.
+
+With the XREAL Eye installed, a tour to the Autoshow should be a great real-world validation run for live interaction with the environment. Progress so far feels very strong.
+
+Notifications were also a great addition to keep me updated without leaving the app.
+
+![Notifications HUD v0.1.14 screenshot](/images/process/Screenshot_20260221_v0-1-14.jpg)
