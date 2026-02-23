@@ -1,0 +1,21 @@
+---
+title: "Process update: Files HUD and access consolidation (v0.1.15)"
+date: "2026-02-21"
+tags: ["Process", "Files", "HUD", "Android"]
+summary: "Transition release with minor but important UX changes: introduced a centralized Files HUD while preserving fast Audio Files workflows ahead of the next major implementation."
+---
+## Release focus
+Version **0.1.15 (2026-02-21)** was a **transition stage**: smaller UX and reliability changes to stabilize day-to-day use before the next major implementation cycle.
+
+## Added
+- New centralized **Files HUD** available from the Start menu (`Files`) with full standard HUD behavior (move/minimize/resize/pin/close/reset).
+- Quick folder actions inside Files HUD:
+  - `Voice recordings` -> opens `memory/audio_recordings`
+  - `Transcripts` -> opens `memory/audio_transcriptions`
+
+## Changed
+- Start menu naming was clarified from `Media` to `Files`.
+- Existing **Audio Files HUD** was intentionally kept unchanged for quick per-recording workflows (`Play` + `Transcript`) while Files HUD became the centralized folder access layer.
+
+## Feedback
+This release felt like an infrastructure and UX alignment pass rather than a feature-heavy milestone. The value was in simplifying file access and reducing friction before moving into the larger local-agent/chat implementation that followed.
