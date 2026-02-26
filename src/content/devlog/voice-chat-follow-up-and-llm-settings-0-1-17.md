@@ -39,3 +39,8 @@ Version **0.1.17 (2026-02-24)** focused on making voice conversation with the lo
 - Fixed intermittent TTS dropouts via stronger Android TTS lifecycle handling and utterance-completion waiting.
 - Fixed multi-turn voice chat stalls after one or two turns by re-arming follow-up windows per turn and isolating chat routing from regular continuous automation.
 - Fixed first follow-up `Listening` misses by forcing fresh transcript anchors and ASR stream resets when entering follow-up windows.
+
+## Feedback
+In testing, the app crashed several times during startup. Clearing cache did not resolve it, and I ultimately had to clear all app data to recover stability. That reset also broke the local LLM chat model setup and forced reconfiguration.
+
+This reinforced the need for a proper restore-point strategy before the data footprint grows further, so recovery does not require destructive resets.
