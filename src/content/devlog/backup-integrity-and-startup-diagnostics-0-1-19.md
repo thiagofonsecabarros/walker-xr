@@ -1,6 +1,6 @@
 ---
 title: "Process update: backup integrity and startup diagnostics hardening (v0.1.19)"
-date: "2026-02-27"
+date: "2026-02-26"
 tags: ["Process", "Reliability", "Recovery", "Diagnostics"]
 summary: "v0.1.19 reinforced reliability with binary-safe backups, deterministic transcript pairing after restore, richer startup diagnostics, and stronger model recovery behavior."
 ---
