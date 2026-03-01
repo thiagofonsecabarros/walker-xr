@@ -335,6 +335,11 @@ pre {
   max-width: 100%;
 }
 
+.markdown-body img[alt="Walker Brain logo"] {
+  width: 300px;
+  max-width: 100%;
+}
+
 .process-legend {
   display: flex;
   gap: 0.5rem;
